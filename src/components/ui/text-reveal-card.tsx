@@ -77,7 +77,7 @@ export const TextRevealCard = ({
     >
       {/* {children} */}
 
-      <div className=" relative flex items-center overflow-hidden">
+      <div className="relative flex items-center overflow-hidden">
         {isHydrated && (
           <>
             <motion.div
