@@ -1,7 +1,14 @@
 import { cn } from "@/lib/utils";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
+import { FaNodeJs } from "react-icons/fa";
+
+type DescriptionItem = {
+  text: string;
+  tag?: React.ComponentType<{ className?: string }>; // ✅ Optional, supports className
+  color?: string; // ✅ Optional
+};
 
 export const HoverEffect = ({
   items,
@@ -9,8 +16,7 @@ export const HoverEffect = ({
 }: {
   items: {
     title: string;
-    description: string[];
-    link: string;
+    description: DescriptionItem[];
   }[];
   className?: string;
 }) => {
@@ -25,8 +31,8 @@ export const HoverEffect = ({
     >
       {items.map((item, idx) => (
         <Link
-          href={item?.link}
-          key={item?.link}
+          href={""}
+          key={idx}
           className="relative group  block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
@@ -35,7 +41,7 @@ export const HoverEffect = ({
             {hoveredIndex === idx && (
               <motion.span
                 className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-3xl"
-                layoutId="hoverBackground"
+                layoutId={`hoverBackground-${idx}`}
                 initial={{ opacity: 0 }}
                 animate={{
                   opacity: 1,
@@ -50,10 +56,16 @@ export const HoverEffect = ({
           </AnimatePresence>
           <Card>
             <CardTitle>{item.title}</CardTitle>
-            <div className="flex flex-wrap">
-            {item.description.map((des: string, index: number) => (
-    <CardDescription key={index}>{des}</CardDescription>
-))}
+            <div className="flex flex-wrap gap-2 mt-2">
+            {item.description.map((desc,index) => {
+    const Icon = desc.tag; 
+    return (
+        <CardDescription key={index}>
+            {Icon && <Icon className={desc.color === "white" ? "text-white mr-2" : `text-${desc.color}-500 mr-2`} />}
+            {desc.text}
+        </CardDescription>
+    );
+})}
             </div>
 
           </Card>
@@ -106,7 +118,7 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "text-zinc-400 tracking-wide leading-relaxed text-sm border py-1 px-3 rounded-full",
+        "flex text-zinc-400 bg-gray-800 tracking-wide leading-relaxed text-sm  py-1 px-3 rounded-full",
         className
       )}
     >
