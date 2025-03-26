@@ -71,7 +71,7 @@ export const SparklesText: React.FC<SparklesTextProps> = ({
 
   return (
     <span
-      className={cnBase("text-5xl text-white", className)}
+      className={cnBase("text-3xl lg:text-5xl text-white", className)}
       {...props}
       style={
         {

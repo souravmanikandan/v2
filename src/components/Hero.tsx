@@ -11,21 +11,22 @@ export default function Hero() {
             <div className="flex-1/2 self-center">
             <AnimatedShinyTextDemo />
             
-            <h1 className='text-5xl font-bold text-white my-6'><SparklesTextDemo />, I'm <span className='bg-gradient-to-tl from-blue-600 to-blue-400 text-transparent bg-clip-text px-1'>Sourav</span>, a Software Engineer crafting digital excellence.</h1>
-            <p className='pb-6'>I specialize in building scalable, high-performance applications that solve real-world problems. Passionate about clean code, innovative solutions, and seamless user experiences.</p>
-            <div className="flex">
+            <h1 className='text-3xl lg:text-5xl font-bold text-white my-6 text-center lg:text-left'><SparklesTextDemo />, I'm <span className='bg-gradient-to-tl from-blue-600 to-blue-400 text-transparent bg-clip-text px-1'>Sourav</span>, <br /> a Software Engineer crafting digital excellence.</h1>
+            <p className='pb-6 text-center lg:text-left lg:pr-3'>I build scalable applications with clean code, innovative solutions, and seamless user experiences.</p>
+            <div className="lg:flex gap-3">
                 <Button
-                    className="bg-gradient-to-tl from-blue-600 to-blue-400 text-white shadow-lg"
+                    className="bg-gradient-to-tl from-blue-600 to-blue-400 text-white shadow-lg w-full lg:w-auto px-7"
                     radius="full"
                 >
                     Resume
                 </Button>
                 <Button
-                    className=" ml-3 shadow-blue-800 text-white shadow-2xs"
+                    className="text-white bg-zinc-800 w-full lg:w-auto px-7"
                     radius="full"
                 >
                     Contact
-                </Button></div>
+                </Button>
+                </div>
 
             </div>
             <div className="flex-1/2 relative">
