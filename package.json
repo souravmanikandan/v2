@@ -9,11 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroui/button": "^2.2.16",
+    "@heroui/react": "^2.7.5",
+    "@heroui/system": "^2.4.12",
+    "@heroui/theme": "^2.4.12",
     "@radix-ui/react-label": "^2.1.2",
     "@react-three/drei": "^10.0.5",
     "@react-three/fiber": "^9.0.0-alpha.8",
     "@tabler/icons-react": "^3.31.0",
     "clsx": "^2.1.1",
+    "framer-motion": "^12.6.0",
     "lucide-react": "^0.483.0",
     "motion": "^12.6.0",
     "next": "15.2.4",

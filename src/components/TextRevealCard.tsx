@@ -8,7 +8,7 @@ import {
 
 export function TextRevealCardPreview() {
   return (
-    <div className="flex items-center justify-center bg-[#0E0E10] h-[40rem] rounded-2xl w-full">
+    <div className="flex h-full items-center justify-center bg-[#0E0E10] rounded-2xl w-full">
       <TextRevealCard
         text="You know the business"
         revealText="I know the chemistry "
@@ -17,8 +17,7 @@ export function TextRevealCardPreview() {
           Sometimes, you just need to see it.
         </TextRevealCardTitle>
         <TextRevealCardDescription>
-          This is a text reveal card. Hover over the card to reveal the hidden
-          text.
+        Beautify your website within minutes.
         </TextRevealCardDescription>
       </TextRevealCard>
     </div>
